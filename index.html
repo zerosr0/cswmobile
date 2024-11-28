@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>|| 조선선재 ADC 시스템 ||</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="page-title">
+      <img class="logo" src="./image/logo.png" alt="">
+      <img class="adc" src="./image/ADC.png" alt="">
+      <h1>Automatic Document System For Customer</h1>
+      <span>문서자동화시스템</span>
+    </div>
+    <ul id="panels" class="panels">
+      <li><img class="main-bg" src="./image/main_bg1.png" alt=""></li>
+      <li><img class="main-bg" src="./image/main_bg2.png" alt=""></li>
+      <li><img class="main-bg" src="./image/main_bg3.png" alt=""></li>
+      <li><img class="main-bg" src="./image/main_bg4.png" alt=""></li>
+    </ul>
+    <div class="input-section__container">
+      <div class="input-section">
+        <table>
+          <caption class="hidden">제품성적서</caption>
+          <tbody>
+            <tr>
+              <th scope="row">
+                항목
+              </th>
+              <td>
+                <select name="" id="selecOpt" onchange="updateContent()">
+                  <option value="제품성적서">제품성적서</option>
+                  <option value="Techinal Report">Technical Report</option>
+                  <option value="MSDS">MSDS</option>
+                  <option value="카탈로그">카탈로그</option>
+                  <option value="인증현황">인증현황</option>
+                </select>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <tbody>
+            <tr>
+              <th scope="row">
+                업체이름
+              </th>
+              <td>
+                <input type="text">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                선경
+              </th>
+              <td>
+                <input type="text">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                수량
+              </th>
+              <td>
+                <input type="text">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                수신방법
+              </th>
+              <td>
+                <div class="email">
+                  <input type="checkbox" name="receipt-method" id="email" value="email">
+                  <label for="email">E-mail</label>
+                </div>
+                <div class="filedown">
+                  <input type="checkbox" name="receipt-method" id="filedown" value="filedown">
+                  <label for="filedown">FileDown</label>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button id="submit_btn">확인</button>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+    const bgSection = document.querySelector('.bgSection');
+    const bgMobile = document.querySelector('.bgMobile');
+    const panels = document.querySelectorAll('.panels li');
+
+    const len = panels.length - 1;
+    const interval = 5000;
+    let vsNum = 0;
+    let timer = null;
+
+
+    window.onload = () => {
+      startRolling();
+    };
+
+
+    //패널 활성화함수
+    function activation(index) {
+      for (const el of panels) el.classList.remove('on');
+      panels[index].classList.add('on');
+      vsNum = index;
+    }
+
+    //롤링함수
+    function rolling() {
+      vsNum < len ? vsNum++ : (vsNum = 0);
+      activation(vsNum);
+    }
+
+    //롤링 시작 함수
+    function startRolling() {
+      activation(vsNum);
+      timer = setInterval(rolling, interval);
+    }
+
+  </script>
+</body>
+
+</html>
