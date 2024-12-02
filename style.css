@@ -2,77 +2,13 @@
 /* 폰트 import */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.hidden {
-  position: absolute;
-  opacity: 0;
-  left: -99999px;
-}
-
-a {
-  text-decoration: none;
-}
-
-li,
-ol,
-ul {
-  list-style: none;
-}
-
-input,
-select {
-  width: 100%;
-  border: 1px solid #ddd;
-  height: 26px;
-}
-
-body {
-  background-color: #fff;
-}
-
-.container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.page-title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #b4b4b4;
-  padding: 5px;
-}
-
-.page-title .logo {
-  object-fit: contain;
-  height: 16px;
-}
-
-.page-title .adc {
-  height: 11px;
-  object-fit: contain;
-}
-
-.page-title h1 {
-  font-size: 12px;
-  font-weight: normal;
-}
-
-.page-title span {
-  font-size: 13px;
-}
-
 .panels {
   position: relative;
   width: 100%;
-  height: calc(100vh - 73px - 42%);
+  height: 30%;
+  margin-bottom: 20px;
+  border-top: 5px solid red;
+  border-bottom: 5px solid red;
 }
 
 .panels li {
@@ -87,6 +23,8 @@ body {
   height: 100%;
   transition: opacity 1s;
   overflow: hidden;
+  padding-top: 5px;
+  padding-bottom: 5px;
   z-index: 2;
 }
 
@@ -96,93 +34,69 @@ body {
 
 .main-bg {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
   opacity: 0.9;
 }
 
-.input-section__container {
+.menu__container {
   position: absolute;
   z-index: 3;
   width: 100%;
   min-height: 42%;
-  background-color: #b4b4b4;
+  height: calc(70% - 83px);
 }
 
-.input-section__container .input-section {
+.menu__container .menu-section {
   position: relative;
 }
 
-.input-section__container .input-section table {
-  width: 100%;
-  height: 100%;
-}
-
-.input-section__container .input-section tr {
-  font-size: 14px;
-  height: 30px;
-}
-
-.input-section__container .input-section tr:last-child td {
+.menu__container .menu-section {
   display: flex;
+  justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 30px;
+  flex-wrap: wrap;
 }
 
-.input-section__container .input-section tr:last-child td div {
-  width: 100%;
+.menu__container .menu-section a {
   display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 90px;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 7px;
+  position: relative;
 }
 
-.input-section__container .input-section tr:last-child td div input {
-  width: 20px;
-  margin-right: 3px;
+.menu__container .menu-section a span {
+  text-align: left;
+  margin-left: 7px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: -0.5px;
 }
 
-.input-section__container .input-section tr:last-child td label {
-  display: inline-block;
-}
 
-.input-section__container .input-section th {
-  width: 35%;
-  background-color: #555;
-  color: #fff;
-  font-weight: normal;
-}
-
-.input-section__container .input-section td {
-  width: 60%;
-  background-color: #fff;
-}
-
-#submit_btn {
+.menu__container .menu-section a i {
+  font-size: 40px;
+  color: #555;
+  text-align: center;
   position: absolute;
-  display: block;
-  left: 1%;
-  bottom: -55px;
-  width: 98%;
-  height: 35px;
-  font-size: 15px;
-  cursor: pointer;
+  width: 40%;
+  left: 50%;
+  bottom: 10px;
 }
 
-@media screen and (max-width: 374px) {
-  .panels {
-    height: calc(100vh - 73px - 50%);
-  }
-
-  .input-section__container {
-    min-height: 50%;
-  }
+.youtube {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  width: 40px;
+  filter: grayscale(0.2);
 }
 
-@media screen and (max-width: 359px) {
-  .panels {
-    height: calc(100vh - 73px - 55%)
-  }
+@media screen and (max-width: 374px) {}
 
-  .input-section__container {
-    min-height: 55%;
-  }
-}
+@media screen and (max-width: 359px) {}

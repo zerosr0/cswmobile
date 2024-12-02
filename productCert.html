@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제품성적서</title>
+  <link rel="stylesheet" href="subpage.css">
+  <link rel="stylesheet" href="header.css">
+</head>
+
+<body>
+  <div class="headerContainer">
+    <div class="page-title"><img class="logo" src="./image/logo.png" alt="">
+      <span>문서 자동화 시스템</span>
+      <h1>Automatic Document System For Customer</h1>
+    </div>
+  </div>
+  <div class="bodyContainer">
+    <button class="open-sheet-btn" id="openSheetBtn">필터 열기</button>
+    <h2>제품 성적서</h2>
+    <div class="topInput">
+      <div>
+        <span class="title">제품명</span>
+        <span class="prodectName">CR-13 E6013</span>
+      </div>
+      <div>
+        <label for="">성적서 업체명</label>
+        <input type="text">
+      </div>
+      <div>
+        <label for="">PO NO</label>
+        <input type="text">
+      </div>
+      <div>
+        <label for="">발행 업체명</label>
+        <input type="text">
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Sheet -->
+  <div class="bottom-sheet" id="bottomSheet">
+    <div class="sheet-header">2차 직종</div>
+    <div class="sheet-content">
+      <ul>
+        <li>UI/UX/GUI 디자인</li>
+        <li>건축/설계 디자인</li>
+        <li>광고/시각 디자인</li>
+        <li>그래픽 디자인</li>
+        <li>금속/공예 디자인</li>
+        <li>브랜드 디자인</li>
+        <li>애니메이션 디자인</li>
+        <li>영상/모션 디자인</li>
+        <li>웹 디자인</li>
+        <li>일러스트레이터</li>
+      </ul>
+    </div>
+  </div>
+</body>
+<script>
+  const openSheetBtn = document.getElementById('openSheetBtn');
+  const bottomSheet = document.getElementById('bottomSheet');
+
+  openSheetBtn.addEventListener('click', () => {
+    bottomSheet.classList.toggle('active');
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!bottomSheet.contains(event.target) && event.target !== openSheetBtn) {
+      bottomSheet.classList.remove('active');
+    }
+  });
+</script>
+
+</html>
