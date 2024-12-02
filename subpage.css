@@ -37,6 +37,7 @@ label {
 
 .topInput div .prodectName {
   padding: 10px;
+  width: 60%;
 }
 
 div input {
@@ -44,6 +45,26 @@ div input {
   width: 60%;
   height: 42px;
   padding: 10px;
+}
+
+.selectSection {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.selectSection select {
+  border: none;
+  width: 60%;
+}
+
+.selectSection div {
+  display: flex;
+  justify-content: space-between;
 }
 
 .bottom-sheet {

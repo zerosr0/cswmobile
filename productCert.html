@@ -26,7 +26,7 @@
       </div>
       <div>
         <label for="">성적서 업체명</label>
-        <input type="text">
+        <input class="focus" type="text">
       </div>
       <div>
         <label for="">PO NO</label>
@@ -35,6 +35,36 @@
       <div>
         <label for="">발행 업체명</label>
         <input type="text">
+      </div>
+    </div>
+    <div class="selectSection">
+      <div>
+        <label for="">선경</label>
+        <select name="" id="">
+          <option value="select">select</option>
+          <option value="1.2mm">1.2mm</option>
+          <option value="1.6mm">1.6mm</option>
+          <option value="3.2mm">3.2mm</option>
+          <option value="4.0mm">4.0mm</option>
+        </select>
+      </div>
+      <div>
+        <label for="">가스</label>
+        <select name="" id="">
+          <option value="">1</option>
+          <option value="">2</option>
+          <option value="">3</option>
+          <option value="">4</option>
+        </select>
+      </div>
+      <div>
+        <label for="">적용코드</label>
+        <select name="" id="">
+          <option value="">1</option>
+          <option value="">2</option>
+          <option value="">3</option>
+          <option value="">4</option>
+        </select>
       </div>
     </div>
   </div>
@@ -61,6 +91,11 @@
 <script>
   const openSheetBtn = document.getElementById('openSheetBtn');
   const bottomSheet = document.getElementById('bottomSheet');
+
+  //로드 시 성적서 업체명에 FOCUS
+  window.onload = () => {
+    document.getElementsByClassName('focus').focus();
+  };
 
   openSheetBtn.addEventListener('click', () => {
     bottomSheet.classList.toggle('active');
