@@ -5,80 +5,89 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>제품성적서</title>
-  <link rel="stylesheet" href="subpage.css">
-  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-  <div class="headerContainer">
-    <div class="page-title"><img class="logo" src="./image/logo.png" alt="">
+  <div class="container">
+    <div class="pageHeader"><img class="logo" src="./image/logo.png" alt="">
       <span>문서 자동화 시스템</span>
       <h1>Automatic Document System For Customer</h1>
     </div>
-  </div>
-  <div class="bodyContainer">
-    <h2>제품 성적서</h2>
-    <div class="topInput">
-      <div>
-        <span class="title">제품명</span>
-        <span class="productName">CR-13 E6013</span>
+    <div class="bodyContainer">
+      <h2 class="pageTitle">제품 성적서</h2>
+      <div class="topInput">
+        <div>
+          <span class="title">제품명</span>
+          <span class="productName">CR-13 E6013</span>
+        </div>
+        <div>
+          <label for="">성적서 업체명</label>
+          <input class="focus" type="text">
+        </div>
+        <div>
+          <label for="">PO NO</label>
+          <input type="text">
+        </div>
+        <div>
+          <label for="">발행 업체명</label>
+          <input type="text">
+        </div>
       </div>
-      <div>
-        <label for="">성적서 업체명</label>
-        <input class="focus" type="text">
-      </div>
-      <div>
-        <label for="">PO NO</label>
-        <input type="text">
-      </div>
-      <div>
-        <label for="">발행 업체명</label>
-        <input type="text">
+      <div class="selectSection">
+        <div>
+          <label for="">선경</label>
+          <select name="" id="">
+            <option value="select">select</option>
+            <option value="1.2mm">1.2mm</option>
+            <option value="1.6mm">1.6mm</option>
+            <option value="3.2mm">3.2mm</option>
+            <option value="4.0mm">4.0mm</option>
+          </select>
+        </div>
+        <div>
+          <label for="">가스</label>
+          <select name="" id="">
+            <option value="select">select</option>
+            <option value="C">C</option>
+            <option value="C/M">C/M</option>
+            <option value="M">M</option>
+          </select>
+        </div>
+        <div>
+          <label for="">적용코드</label>
+          <select name="" id="">
+            <option value="">1</option>
+            <option value="">2</option>
+            <option value="">3</option>
+            <option value="">4</option>
+          </select>
+        </div>
+        <div>
+          <label for="">중량</label>
+          <input type="text">
+        </div>
       </div>
     </div>
-    <div class="selectSection">
-      <div>
-        <label for="">선경</label>
-        <select name="" id="">
-          <option value="select">select</option>
-          <option value="1.2mm">1.2mm</option>
-          <option value="1.6mm">1.6mm</option>
-          <option value="3.2mm">3.2mm</option>
-          <option value="4.0mm">4.0mm</option>
-        </select>
+    <div class="btns">
+      <div class="icons">
+        <a href="#" class="home">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </a>
+        <a href="#" class="youtube">
+          <img class="youtubeIcon" src="./image/youtubeicon.png" alt=""><span>Youtube</span>
+        </a>
       </div>
-      <div>
-        <label for="">가스</label>
-        <select name="" id="">
-          <option value="select">select</option>
-          <option value="C">C</option>
-          <option value="C/M">C/M</option>
-          <option value="M">M</option>
-        </select>
-      </div>
-      <div>
-        <label for="">적용코드</label>
-        <select name="" id="">
-          <option value="">1</option>
-          <option value="">2</option>
-          <option value="">3</option>
-          <option value="">4</option>
-        </select>
-      </div>
-      <div>
-        <label for="">중량</label>
-        <input type="text">
-      </div>
+      <button class="open-sheet-btn" id="openSheetBtn">발행</button>
     </div>
   </div>
-  <button class="open-sheet-btn" id="openSheetBtn">발행</button>
-
-  <!-- Bottom Sheet -->
-  <div class="bottom-sheet" id="bottomSheet">
-    <button class="sheet-header">발행하기</button>
+  <!-- 발행버튼 눌렀을 때 팝업 Sheet -->
+  <div class="downloadSheet" id="downloadSheet">
+    <button class="downloadBtn">발행하기</button>
     <div class="sheet-content">
       <ul>
         <li><i class="fa-solid fa-envelope"></i>이메일전송<input type="text" placeholder="메일주소입력"></li>
@@ -89,7 +98,7 @@
 </body>
 <script>
   const openSheetBtn = document.getElementById('openSheetBtn');
-  const bottomSheet = document.getElementById('bottomSheet');
+  const bottomSheet = document.getElementById('downloadSheet');
 
   //로드 시 성적서 업체명에 FOCUS
   window.onload = () => {

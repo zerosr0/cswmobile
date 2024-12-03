@@ -1,11 +1,64 @@
 @charset 'utf-8';
-/* 폰트 import */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+
+/* default css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li,
+ol,
+ul {
+  list-style: none;
+}
+
+
+/* 회사로고 및 header 공통 부분 */
+body {
+  background-color: #fff;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.pageHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 10px 5px;
+}
+
+.pageHeader .logo {
+  object-fit: contain;
+  height: 25px;
+}
+
+.pageHeader h1 {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.pageHeader span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* panel 이미지 슬라이드 부분 */
 .panels {
   position: relative;
   width: 100%;
-  height: 30%;
+  height: 31%;
   margin-bottom: 20px;
   border-top: 5px solid red;
   border-bottom: 5px solid red;
@@ -32,31 +85,33 @@
   opacity: 1;
 }
 
-.main-bg {
+.mainBg {
   width: 100%;
   opacity: 0.9;
 }
 
-.menu__container {
+
+/* 메인페이지 메뉴 버튼 부분 */
+.menuContainer {
   position: absolute;
   z-index: 3;
   width: 100%;
   min-height: 42%;
-  height: calc(70% - 83px);
+  height: calc(69% - 83px);
 }
 
-.menu__container .menu-section {
+.menuContainer .menuSection {
   position: relative;
 }
 
-.menu__container .menu-section {
+.menuContainer .menuSection {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.menu__container .menu-section a {
+.menuContainer .menuSection a {
   display: flex;
   flex-direction: column;
   width: 40%;
@@ -70,7 +125,7 @@
   position: relative;
 }
 
-.menu__container .menu-section a span {
+.menuContainer .menuSection a span {
   text-align: left;
   margin-left: 7px;
   font-size: 14px;
@@ -79,7 +134,7 @@
 }
 
 
-.menu__container .menu-section a i {
+.menuContainer .menuSection a i {
   font-size: 40px;
   color: #555;
   text-align: center;
@@ -89,12 +144,181 @@
   bottom: 10px;
 }
 
-.youtube {
+
+/* subpage css*/
+
+h2.pageTitle {
   position: relative;
-  margin-top: 20px;
-  margin-left: 30px;
-  width: 40px;
+  font-size: 17px;
+  margin: 30px 0 10px 20px;
+}
+
+h2.pageTitle::after {
+  position: absolute;
+  top: 10px;
+
+  content: '';
+  border-top: 3px solid red;
+}
+
+.topInput {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.topInput div {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.topInput:last-child {
+  border-bottom: none;
+}
+
+.topInput div .title,
+label {
+  padding: 10px;
+}
+
+.topInput div .productName {
+  padding: 10px;
+  width: 60%;
+}
+
+div input {
+  border: none;
+  width: 60%;
+  height: 42px;
+  padding: 10px;
+}
+
+.selectSection {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.selectSection select {
+  border: none;
+  width: 60%;
+  background-color: #fff;
+}
+
+.selectSection div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-sheet {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: #fff;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  transition: bottom 0.3s ease-in-out;
+  z-index: 100;
+}
+
+.bottom-sheet.active {
+  bottom: 0;
+}
+
+.sheet-header {
+  padding: 16px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.sheet-content {
+  padding: 16px;
+}
+
+.sheet-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sheet-content ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+}
+
+.sheet-content ul li:hover {
+  background: #f9f9f9;
+}
+
+.open-sheet-btn {
+  position: relative;
+  margin: 20px;
+  padding: 10px 20px;
+  background: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icons {
+  display: flex;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 15px 25px;
+}
+
+.home i {
+  font-size: 28px;
+  color: #555;
+}
+
+.home span {
+  color: #555;
+  font-size: 12px;
+}
+
+.youtube {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 15px 0px;
   filter: grayscale(0.2);
+}
+
+.youtubeIcon {
+  width: 30px;
+}
+
+.youtube span {
+  font-size: 12px;
+  color: #555;
 }
 
 @media screen and (max-width: 374px) {}
