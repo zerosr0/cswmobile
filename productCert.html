@@ -7,6 +7,9 @@
   <title>제품성적서</title>
   <link rel="stylesheet" href="subpage.css">
   <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -17,12 +20,11 @@
     </div>
   </div>
   <div class="bodyContainer">
-    <button class="open-sheet-btn" id="openSheetBtn">필터 열기</button>
     <h2>제품 성적서</h2>
     <div class="topInput">
       <div>
         <span class="title">제품명</span>
-        <span class="prodectName">CR-13 E6013</span>
+        <span class="productName">CR-13 E6013</span>
       </div>
       <div>
         <label for="">성적서 업체명</label>
@@ -51,10 +53,10 @@
       <div>
         <label for="">가스</label>
         <select name="" id="">
-          <option value="">1</option>
-          <option value="">2</option>
-          <option value="">3</option>
-          <option value="">4</option>
+          <option value="select">select</option>
+          <option value="C">C</option>
+          <option value="C/M">C/M</option>
+          <option value="M">M</option>
         </select>
       </div>
       <div>
@@ -66,24 +68,21 @@
           <option value="">4</option>
         </select>
       </div>
+      <div>
+        <label for="">중량</label>
+        <input type="text">
+      </div>
     </div>
   </div>
+  <button class="open-sheet-btn" id="openSheetBtn">발행</button>
 
   <!-- Bottom Sheet -->
   <div class="bottom-sheet" id="bottomSheet">
-    <div class="sheet-header">2차 직종</div>
+    <button class="sheet-header">발행하기</button>
     <div class="sheet-content">
       <ul>
-        <li>UI/UX/GUI 디자인</li>
-        <li>건축/설계 디자인</li>
-        <li>광고/시각 디자인</li>
-        <li>그래픽 디자인</li>
-        <li>금속/공예 디자인</li>
-        <li>브랜드 디자인</li>
-        <li>애니메이션 디자인</li>
-        <li>영상/모션 디자인</li>
-        <li>웹 디자인</li>
-        <li>일러스트레이터</li>
+        <li><i class="fa-solid fa-envelope"></i>이메일전송<input type="text" placeholder="메일주소입력"></li>
+        <li><i class="fa-solid fa-file-arrow-down"></i>이 기기에 파일 저장</li>
       </ul>
     </div>
   </div>
