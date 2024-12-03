@@ -41,7 +41,7 @@
         <div>
           <label for="">선경</label>
           <select name="" id="">
-            <option value="select">select</option>
+            <option value="select">Select</option>
             <option value="1.2mm">1.2mm</option>
             <option value="1.6mm">1.6mm</option>
             <option value="3.2mm">3.2mm</option>
@@ -51,7 +51,7 @@
         <div>
           <label for="">가스</label>
           <select name="" id="">
-            <option value="select">select</option>
+            <option value="select">Select</option>
             <option value="C">C</option>
             <option value="C/M">C/M</option>
             <option value="M">M</option>
@@ -60,6 +60,7 @@
         <div>
           <label for="">적용코드</label>
           <select name="" id="">
+            <option value="select">Select</option>
             <option value="">1</option>
             <option value="">2</option>
             <option value="">3</option>
@@ -74,7 +75,7 @@
     </div>
     <div class="btns">
       <div class="icons">
-        <a href="#" class="home">
+        <a href="index.html" class="home">
           <i class="fa-solid fa-house"></i>
           <span>Home</span>
         </a>
@@ -82,18 +83,17 @@
           <img class="youtubeIcon" src="./image/youtubeicon.png" alt=""><span>Youtube</span>
         </a>
       </div>
-      <button class="open-sheet-btn" id="openSheetBtn">발행</button>
+      <button class="openSheetBtn" id="openSheetBtn">발행</button>
     </div>
   </div>
   <!-- 발행버튼 눌렀을 때 팝업 Sheet -->
   <div class="downloadSheet" id="downloadSheet">
     <button class="downloadBtn">발행하기</button>
-    <div class="sheet-content">
-      <ul>
-        <li><i class="fa-solid fa-envelope"></i>이메일전송<input type="text" placeholder="메일주소입력"></li>
-        <li><i class="fa-solid fa-file-arrow-down"></i>이 기기에 파일 저장</li>
-      </ul>
-    </div>
+    <ul class="sheetContent">
+      <li><input type="checkbox" name="" id=""><i class="fa-solid fa-envelope"></i>이메일전송<input type="text"
+          placeholder="메일주소입력" required></li>
+      <li><input type="checkbox" name="" id=""><i class="fa-solid fa-file-arrow-down"></i>이 기기에 파일 저장</li>
+    </ul>
   </div>
 </body>
 <script>
