@@ -325,6 +325,30 @@ div input {
   font-size: 18px;
 }
 
+/* technical report 외 비슷한 페이지 공통 */
+
+.downloadList {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.downloadList div {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.downloadList input {
+  width: 20px;
+  margin-right: 5px;
+}
+
+/* subpage 하단 아이콘 공통 */
 .btns {
   display: flex;
   justify-content: space-between;
