@@ -213,7 +213,6 @@ div input {
   border: none;
   width: 60%;
   background-color: #fff;
-  appearance: none;
   font-size: 15px;
 }
 
@@ -222,12 +221,12 @@ div input {
   justify-content: space-between;
 }
 
-/* 발행버튼 */
-.openSheetBtn {
+/* 홈화면의 발행버튼 */
+.homeDownBtn {
   position: relative;
   margin: 20px;
   padding: 10px 20px;
-  background: #777;
+  background: #666;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -241,7 +240,7 @@ div input {
   bottom: -100%;
   left: 0;
   width: 100%;
-  height: 30%;
+  height: 25%;
   background: #fff;
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
   border-top-left-radius: 16px;
@@ -254,15 +253,34 @@ div input {
   bottom: 0;
 }
 
+.popBtns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.editBtn,
+.popDownBtn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 3px 5px;
+  font-size: 15px;
+  border: none;
+}
+
+.popDownBtn {
+  background: #007bff;
+  color: #fff;
+}
+
 .sheetContent {
-  margin-top: 36px;
-  padding: 16px;
+  padding: 10px;
 }
 
 .sheetContent li {
   display: flex;
   align-items: center;
   border-bottom: 1px solid #f0f0f0;
+  height: 50px;
   cursor: pointer;
 }
 
@@ -270,9 +288,41 @@ div input {
   background: #f9f9f9;
 }
 
-.sheetContent li input[type="checkbox"] {
+/* 라디오 버튼 체크박스처럼 css */
+.sheetContent li input[type="radio"] {
+  display: none;
+}
+
+.sheetContent li input[type="radio"]+label {
+  display: inline-block;
   width: 20px;
-  margin-right: 10px;
+  height: 20px;
+  margin: 0 8px;
+  border: 1px solid #000;
+  border-radius: 3px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* 선택된 상태 */
+.sheetContent li input[type="radio"]:checked+label {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* 선택 시 내부 체크 표시 */
+.sheetContent li input[type="radio"]:checked+label::after {
+  content: '\f00c';
+  display: block;
+  font-size: 20px;
+  color: #fff;
+}
+
+.sheetContent li i {
+  width: 20px;
+  text-align: center;
+  margin-right: 5px;
+  font-size: 18px;
 }
 
 .btns {

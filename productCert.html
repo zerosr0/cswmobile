@@ -83,37 +83,47 @@
           <img class="youtubeIcon" src="./image/youtubeicon.png" alt=""><span>Youtube</span>
         </a>
       </div>
-      <button class="openSheetBtn" id="openSheetBtn">발행</button>
+      <button class="homeDownBtn" id="homeDownBtn">발행</button>
     </div>
   </div>
   <!-- 발행버튼 눌렀을 때 팝업 Sheet -->
   <div class="downloadSheet" id="downloadSheet">
-    <button class="downloadBtn">발행하기</button>
+    <div class="popBtns">
+      <button class="editBtn">수정하기</button>
+      <button class="popDownBtn">발행하기</button>
+    </div>
     <ul class="sheetContent">
-      <li><input type="checkbox" name="" id=""><i class="fa-solid fa-envelope"></i>이메일전송<input type="text"
-          placeholder="메일주소입력" required></li>
-      <li><input type="checkbox" name="" id=""><i class="fa-solid fa-file-arrow-down"></i>이 기기에 파일 저장</li>
+      <li>
+        <input type="radio" name="publish" id="sendEmail">
+        <label for="sendEmail"></label>
+        <i class="fa-solid fa-envelope"></i>이메일전송
+        <input type="text" placeholder="메일주소입력" required style="padding-left: 10px;">
+      </li>
+      <li>
+        <input type="radio" name="publish" id="downFile">
+        <label for="downFile"></label>
+        <i class="fa-solid fa-file-arrow-down"></i>이 기기에 파일 저장
+      </li>
     </ul>
   </div>
 </body>
 <script>
-  const openSheetBtn = document.getElementById('openSheetBtn');
+  const homeDownBtn = document.getElementById('homeDownBtn');
   const bottomSheet = document.getElementById('downloadSheet');
+  const editBtn = document.querySelector('.editBtn');
 
-  //로드 시 성적서 업체명에 FOCUS
-  window.onload = () => {
-    document.getElementsByClassName('focus').focus();
-  };
-
-  openSheetBtn.addEventListener('click', () => {
+  homeDownBtn.addEventListener('click', () => {
     bottomSheet.classList.toggle('active');
+    document.body.style.pointerEvents = "none";
+    bottomSheet.style.pointerEvents = "auto";
   });
 
-  document.addEventListener('click', (event) => {
-    if (!bottomSheet.contains(event.target) && event.target !== openSheetBtn) {
-      bottomSheet.classList.remove('active');
-    }
-  });
+
+  editBtn.addEventListener('click', () => {
+    bottomSheet.classList.remove('active');
+    document.body.style.pointerEvents = "auto";
+  })
+
 </script>
 
 </html>
