@@ -388,9 +388,7 @@ div input {
 
 /* subpage 하단 아이콘 공통 */
 .btns {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
+  position: relative;
   display: flex;
   justify-content: space-between;
   width: 100%;
