@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>인증현황</title>
   <link rel="stylesheet" href="style.css">
+  <!-- 아이콘(폰트어썸) CDN-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -62,6 +63,7 @@
         </ul>
       </div>
     </div>
+    <!-- 화면 하단 버튼 -->
     <div class="btns">
       <div class="icons">
         <a href="index.html" class="home">
@@ -83,17 +85,20 @@
   const ksCertification = document.querySelector('.ksCertification input[type="checkbox"]');
   const thickType = document.querySelector('.thickType');
 
+  //발행 버튼 눌렀을 때 모달창이 뜨고 기존 페이지의 input등을 터치해도 반응되지 않도록 
   homeDownBtn.addEventListener('click', () => {
     bottomSheet.classList.toggle('active');
     document.body.style.pointerEvents = "none";
     bottomSheet.style.pointerEvents = "auto";
   });
 
+  //수정하기 버튼을 누르면 모달창이 사라지고 다시 기존페이지의 포인트 이벤트가 복구
   editBtn.addEventListener('click', () => {
     bottomSheet.classList.remove('active');
     document.body.style.pointerEvents = "auto";
   });
 
+  //ks인증서 앞의 체크 버튼을 눌렀을 때 선경을 입력할 수 있는 란이 나오게(toggle형태로)
   ksCertification.addEventListener("change", () => {
     thickType.classList.toggle("active", ksCertification.checked);
   });
