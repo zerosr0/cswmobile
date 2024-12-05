@@ -23,8 +23,7 @@ ul {
 /* 상단 회사로고 및 header 공통 부분 */
 body {
   background-color: #fff;
-  height: calc(var(--vh, 1vh) * 100);
-  /* 동적 높이 적용 */
+  height: 100vh;
 }
 
 .container {
@@ -91,7 +90,6 @@ body {
   opacity: 0.9;
 }
 
-
 /* 메인페이지 메뉴 버튼 부분 */
 .menuContainer {
   position: absolute;
@@ -145,7 +143,7 @@ body {
 }
 
 
-/* subpage css*/
+/* subpage css */
 h2.pageTitle {
   position: relative;
   font-size: 17px;
@@ -162,9 +160,10 @@ h2.pageTitle::after {
   background: #E51D21;
 }
 
+
 /* 제품성적서 page css */
 .prodTestReptContents {
-  max-height: calc(100vh - 260px);
+  max-height: 60vh;
   overflow: scroll;
 }
 
@@ -341,13 +340,14 @@ div input {
   font-size: 18px;
 }
 
-/* technical report 외 비슷한 페이지 공통 */
+/* technical report와 비슷한 페이지 공통 css */
 .downloadList {
   display: flex;
   flex-direction: column;
   width: 90%;
   height: 100%;
-  max-height: calc(100vh - 260px);
+  /* 디바이스 높이가 700px 이하이면 ui 깨짐 */
+  max-height: 60vh;
   margin: 10px auto;
   border: 1px solid #ccc;
   border-radius: 3px;
@@ -364,6 +364,7 @@ div input {
   width: 20px;
   margin-right: 5px;
 }
+
 
 /* 인증현황page 개별 css */
 .thickType {
