@@ -65,7 +65,26 @@
           <input type="checkbox" name="" id=""> ISO인증서
         </div>
       </div>
-
+      <!-- 발행버튼 눌렀을 때 팝업 Sheet -->
+      <div class="downloadSheet" id="downloadSheet">
+        <div class="popBtns">
+          <button class="editBtn">수정하기</button>
+          <button class="popDownBtn">발행하기</button>
+        </div>
+        <ul class="sheetContent">
+          <li>
+            <input type="radio" name="publish" id="sendEmail">
+            <label for="sendEmail"></label>
+            <i class="fa-solid fa-envelope"></i>이메일전송
+            <input type="text" placeholder="여기에 메일주소입력" required style="padding-left: 10px;">
+          </li>
+          <li>
+            <input type="radio" name="publish" id="downFile">
+            <label for="downFile"></label>
+            <i class="fa-solid fa-file-arrow-down"></i>이 기기에 파일 저장
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="btns">
       <div class="icons">
@@ -81,5 +100,20 @@
     </div>
   </div>
 </body>
+<script>
+  const homeDownBtn = document.getElementById('homeDownBtn');
+  const bottomSheet = document.getElementById('downloadSheet');
+  const editBtn = document.querySelector('.editBtn');
+
+  homeDownBtn.addEventListener('click', () => {
+    bottomSheet.classList.toggle('active');
+    document.body.style.pointerEvents = "none";
+    bottomSheet.style.pointerEvents = "auto";
+  });
+
+  editBtn.addEventListener('click', () => {
+    bottomSheet.classList.remove('active');
+    document.body.style.pointerEvents = "auto";
+  })</script>
 
 </html>
