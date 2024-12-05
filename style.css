@@ -333,7 +333,6 @@ div input {
 }
 
 /* technical report 외 비슷한 페이지 공통 */
-
 .downloadList {
   display: flex;
   flex-direction: column;
@@ -357,10 +356,36 @@ div input {
   margin-right: 5px;
 }
 
+/* 인증현황page 개별 css */
+.thickType {
+  padding-left: 35px;
+  background: #eee;
+  display: none !important;
+  transition: display .3s;
+}
+
+.thickType.active {
+  display: flex !important;
+}
+
+.thickType input {
+  width: 60%;
+}
+
+.thickType input::placeholder {
+  color: #ddd;
+}
+
+
 /* subpage 하단 아이콘 공통 */
 .btns {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  ;
 }
 
 .icons {
