@@ -23,6 +23,7 @@ ul {
 /* 회사로고 및 header 공통 부분 */
 body {
   background-color: #fff;
+  height: 100vh;
 }
 
 .container {
