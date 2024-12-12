@@ -10,6 +10,7 @@
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>|| 조선선재 ADC 시스템 ||</title>
+  <script defer src="./main.js"></script>
 </head>
 
 <body>
@@ -55,50 +56,18 @@
         </a>
       </div>
       <div class="icons">
-        <a class="youtube" href="#">
+        <a class="youtube" href="https://youtube.com/@chosunwelding6424?si=YN8_MplIK7B6LIyU">
           <img class="youtubeIcon" src="./image/youtubeicon.png" alt="">
           <span>Youtube</span>
+        </a>
+        <a class="languege" href="#">
+          <img class="langIcon" src="./image/lang_icon.png" alt="">
+          <span>English</span>
         </a>
       </div>
     </div>
   </div>
   </div>
-  <script>
-    const bgSection = document.querySelector('.bgSection');
-    const bgMobile = document.querySelector('.bgMobile');
-    const panels = document.querySelectorAll('.panels li');
-
-    const len = panels.length - 1;
-    const interval = 5000;
-    let vsNum = 0;
-    let timer = null;
-
-
-    window.onload = () => {
-      startRolling();
-    };
-
-
-    //패널 활성화함수
-    function activation(index) {
-      for (const el of panels) el.classList.remove('on');
-      panels[index].classList.add('on');
-      vsNum = index;
-    }
-
-    //롤링함수
-    function rolling() {
-      vsNum < len ? vsNum++ : (vsNum = 0);
-      activation(vsNum);
-    }
-
-    //롤링 시작 함수
-    function startRolling() {
-      activation(vsNum);
-      timer = setInterval(rolling, interval);
-    }
-
-  </script>
 </body>
 
 </html>

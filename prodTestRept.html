@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script defer src="./main.js"></script>
 </head>
 
 <body>
@@ -82,7 +83,7 @@
           <i class="fa-solid fa-house"></i>
           <span>Home</span>
         </a>
-        <a href="#" class="youtube">
+        <a href="https://youtube.com/@chosunwelding6424?si=YN8_MplIK7B6LIyU" class="youtube">
           <img class="youtubeIcon" src="./image/youtubeicon.png" alt=""><span>Youtube</span>
         </a>
       </div>
@@ -110,21 +111,5 @@
     </ul>
   </div>
 </body>
-<script>
-  const homeDownBtn = document.getElementById('homeDownBtn');
-  const bottomSheet = document.getElementById('downloadSheet');
-  const editBtn = document.querySelector('.editBtn');
-
-  homeDownBtn.addEventListener('click', () => {
-    bottomSheet.classList.toggle('active');
-    document.body.style.pointerEvents = "none";
-    bottomSheet.style.pointerEvents = "auto";
-  });
-
-  editBtn.addEventListener('click', () => {
-    bottomSheet.classList.remove('active');
-    document.body.style.pointerEvents = "auto";
-  })
-</script>
 
 </html>
